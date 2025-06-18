@@ -56,6 +56,7 @@ x-init-ollama: &init-ollama
 services:
   traefik:
       image: "traefik"
+      networks: ['demo']
       restart: always
       command:
         - "--api.insecure=true"

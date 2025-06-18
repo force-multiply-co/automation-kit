@@ -102,6 +102,8 @@ services:
       - "n8n import:credentials --separate --input=/demo-data/credentials && n8n import:workflow --separate --input=/demo-data/workflows"
     volumes:
       - ./n8n/demo-data:/demo-data
+    labels:
+      - traefik.enable=false  
     depends_on:
       postgres:
         condition: service_healthy
